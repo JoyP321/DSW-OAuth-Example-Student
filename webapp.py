@@ -79,10 +79,10 @@ def renderPage1():
 @app.route('/page2')
 def renderPage2():
     if 'user_data' in session:
-        repoData = session['user_data']['public_repos'] #format the user data nicely
+        repoData = "This user has " + str(session['user_data']['public_repos'] " public repositories") + #format the user data nicely
     else:
         repoData = '';
-    return render_template('page2.html', data = "This user has " +str(repoData)+ " public repositories")
+    return render_template('page2.html', data = repoData )
 
 @github.tokengetter #runs automatically. needed to confirm logged in
 def get_github_oauth_token():
