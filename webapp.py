@@ -79,7 +79,7 @@ def renderPage1():
 @app.route('/page2')
 def renderPage2():
     if 'user_data' in session:
-        repoData = session['public_repos'] #format the user data nicely
+        repoData = session['user_data']['public_repos'] #format the user data nicely
     else:
         repoData = '';
     return render_template('page2.html', data = repoData )
