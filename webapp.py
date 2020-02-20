@@ -82,7 +82,7 @@ def renderPage2():
         repoData = session['user_data']['public_repos'] #format the user data nicely
     else:
         repoData = '';
-    return render_template('page2.html', data = repoData )
+    return render_template('page2.html', data = "This user has " +str(repoData)+ " public repositories")
 
 @github.tokengetter #runs automatically. needed to confirm logged in
 def get_github_oauth_token():
